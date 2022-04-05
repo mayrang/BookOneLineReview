@@ -30,12 +30,14 @@ const reducer = (action, state) => {
   return newData;
 }
 
+export const ReviewStateContext = React.createContext();
+export const ReviewDispatchContext = React.createContext();
+
+
 function App() {
 
   const [data, dispatch] = useReducer(reducer, []);
   const idRef = useRef(1);
-  const ReviewStateContext = React.createContext();
-  const ReviewDispatchContext = React.createContext();
 
   useEffect(()=>{
     const localData = localStorage.getItem("Diary");
@@ -46,20 +48,21 @@ function App() {
     }
   }, []);
 
-  const onCreate = useCallback((title, content, date, rating )=>{
+  const onCreate = useCallback((title, content, date, rating, category)=>{
     const newData = {
       id: idRef.current,
       title, 
       content,
       date,
-      rating
+      rating, 
+      category
     };
     dispatch({type:"CREATE", data:newData});
     idRef.current += 1;
   }, []);
 
-  const onEdit = useCallback((targetId, newContent, newRating, newDate) => {
-    const editData = data.map((it) => parseInt(it.id) === parseInt(targetId) ? {content: newContent, rating: newRating, data: newDate, ...it} : it);
+  const onEdit = useCallback((targetId, newContent, newRating, newDate, newCategory) => {
+    const editData = data.map((it) => parseInt(it.id) === parseInt(targetId) ? {content: newContent, rating: newRating, data: newDate, category: newCategory, ...it} : it);
     dispatch({type:"EDIT", data: editData});
   }, [data]);
 
