@@ -2,6 +2,7 @@ import { useCallback, useContext, useEffect, useState} from "react";
 import MyButton from "./componants/MyButton";
 import MyHeader from "./componants/MyHeader";
 import { ReviewStateContext} from "./App.js";
+import ReveiwList from "./componants/ReviewList.js";
 
 const Home = () => {
     const reviewData = useContext(ReviewStateContext);
@@ -27,7 +28,7 @@ const Home = () => {
         <div>
             <MyHeader leftChild={<MyButton text={"<"} onClick={decreaseMonth} type={"default"}/>}
             rightChild={<MyButton text={">"} onClick={increaseMonth} type={"default"} />} headText={headText} />
-            {data}
+            <ReveiwList data={data} />
         </div>
     );
 }

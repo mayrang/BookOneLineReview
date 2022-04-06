@@ -111,10 +111,10 @@ header button {
 .ReviewList .menu_wrapper .right_col {
   flex-grow: 1;
 }
-
+/* 
 .ReviewList .menu_wrapper .right_col button {
   width: 100%;
-}
+} */
 
 .ReviewList .ControlMenu {
   margin-right: 10px;
