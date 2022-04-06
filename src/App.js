@@ -26,7 +26,7 @@ const reducer = (action, state) => {
     default:
       return state;
   }
-  localStorage.setItem("Diary", JSON.stringify(newData));
+  localStorage.setItem("Review", JSON.stringify(newData));
   return newData;
 }
 
@@ -40,9 +40,10 @@ function App() {
   const idRef = useRef(1);
 
   useEffect(()=>{
-    const localData = localStorage.getItem("Diary");
+    // localStorage.setItem("Review", JSON.stringify([{id:1, title:"test", content:"testing", category:1, rating:3, date:1649265799237}]))
+    const localData = localStorage.getItem("Review");
     if(localData){
-      const reviewData = JSON.parse(localData).sort((a,b)=> parseInt(a.id));
+      const reviewData = JSON.parse(localData).sort((a,b)=> parseInt(b.id) - parseInt(a.id));
       idRef.current = parseInt(reviewData[0].id) + 1;
       dispatch({type:"INIT", data:reviewData});
     }
@@ -74,6 +75,7 @@ function App() {
   const memorizedDispatch = useMemo(() => {
     return {onCreate, onEdit, onRemove};
   }, [onCreate, onEdit, onRemove]);
+
   return (
     <ReviewStateContext.Provider value={data}>
     <ReviewDispatchContext.Provider value={memorizedDispatch} >

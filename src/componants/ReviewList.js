@@ -27,11 +27,13 @@ const ControlMenu = ({value, onChange, optionList}) => {
 
 
 const ReviewList = ({data}) => {
+
     const navigate = useNavigate()
     const [sortCategory, setSortCategory] = useState(0);
     const [sortDate, setSortDate] = useState("latest");
-    const getProcessReviewList = useMemo(() => {
+    const getProcessReviewList = useMemo(()=> {
         const copyList = JSON.parse(JSON.stringify(data));
+
         let filteredList = [];
         switch(sortCategory){
             case 0:
@@ -69,9 +71,12 @@ const ReviewList = ({data}) => {
 
         }else{
             sortedList = filteredList.sort((a, b) => parseInt(a.date) - parseInt(b.date));
+
         }
         return sortedList;
+
     }, [data, sortCategory, sortDate]);
+
     return (
         <div className="ReviewList">
             <div className="menu_wrapper">
@@ -82,11 +87,12 @@ const ReviewList = ({data}) => {
                 <div className="left_col">
                     <MyButton text={"새 일기쓰기"} onClick={() => navigate("/write")} type={"positive"} />
                 </div>
-                {getProcessReviewList.map((it) => <ReviewItem key={it.id} {...it} />)}
-
+               
             </div>
+            {getProcessReviewList.map((it) => <ReviewItem key={it.id} {...it} />)}
+
         </div>
-    )
+    );
 }
 
 export default ReviewList;
