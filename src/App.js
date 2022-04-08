@@ -6,10 +6,11 @@ import Edit from "./Edit.js";
 import Review from "./Review.js";
 import Write from "./Write";
 
-const reducer = (action, state) => {
+const reducer = (state, action) => {
   let newData = [];
   switch(action.type){
     case "INIT":
+      
       return action.data;
     case "CREATE":
       newData = [
@@ -54,7 +55,7 @@ function App() {
       id: idRef.current,
       title, 
       content,
-      date,
+      date: new Date(date).getTime(),
       rating, 
       category
     };

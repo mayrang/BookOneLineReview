@@ -174,3 +174,74 @@ header button {
   min-width: 70px;
 }
 
+/* ReviewEditor */
+
+.ReviewEditor {
+
+}
+
+.ReviewEditor section {
+  margin-bottom: 40px;
+}
+
+.ReviewEditor h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ReviewEditor .input_date {
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+}
+
+.ReviewEditor .input_title {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ececec;
+
+}
+.ReviewEditor textarea {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #ececec;
+}
+
+.ReviewEditor .control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ReviewEditor select {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  font-family: "Nanum Pen Script";
+  font-size: 10px;
+}

@@ -1,7 +1,10 @@
+import ReviewEditor from "./componants/ReviewEditor";
 
 const Writer = () => {
     return (
-        <div></div>
+        <div>
+            <ReviewEditor />
+        </div>
     );
 }
 

@@ -13,7 +13,6 @@ const Home = () => {
         const firstDay = new Date(month.getFullYear(), month.getMonth(), 1).getTime();
         const lastDay = new Date(month.getFullYear(), month.getMonth()+1, 0, 23, 59, 59).getTime();
         setData(reviewData.filter((it) => parseInt(firstDay) <= parseInt(it.date) && parseInt(it.date) <= parseInt(lastDay)));
-        
     }, [month, reviewData]);
 
     const increaseMonth = useCallback(()=> {

@@ -12,9 +12,7 @@ export const categoryList = [
     {value: 4,
     name: "경제/경영/인문"},
     {value: 5,
-    name: '경제/경영/인문'},
-    {value: 6,
     name: "참고서/교재"},
-    {value: 7,
+    {value: 6,
     name: "자기계발"}
 ]

@@ -27,7 +27,6 @@ const ControlMenu = ({value, onChange, optionList}) => {
 
 
 const ReviewList = ({data}) => {
-
     const navigate = useNavigate()
     const [sortCategory, setSortCategory] = useState(0);
     const [sortDate, setSortDate] = useState("latest");
