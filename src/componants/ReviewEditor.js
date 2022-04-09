@@ -1,4 +1,4 @@
-import {useCallback, useContext, useState, useRef} from "react";
+import {useCallback, useContext, useState, useRef, useEffect} from "react";
 import { categoryList } from "../utils/categoryList";
 import { ReviewDispatchContext } from "../App.js";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +20,7 @@ const ratingList = [
 
 
 
-const ReviewEditor = () => {
+const ReviewEditor = ({originData}) => {
     const {onCreate} = useContext(ReviewDispatchContext);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -32,6 +32,15 @@ const ReviewEditor = () => {
     const categoryRef = useRef();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if(originData){
+            setTitle(originData.title);
+            setCategory(originData.category);
+            setContent(originData.content);
+            setDate(new Date(originData.date).toISOString().slice(0, 10));
+            setRating(originData.rating);
+        }
+    }, [originData])
 
     const changeTitle = useCallback((e) => {
         setTitle(e.target.value);
@@ -74,7 +83,7 @@ const ReviewEditor = () => {
         <div className="ReviewEditor">
             <section>
                 <h4>제목</h4>
-                <input ref={titleRef} type="text" className="input_title" onChange={changeTitle}/>
+                <input ref={titleRef} type="text" className="input_title" onChange={changeTitle} value={title}/>
             </section>
             <section>
                 <h4>카테고리</h4>
