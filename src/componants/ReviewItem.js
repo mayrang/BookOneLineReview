@@ -1,5 +1,6 @@
 import { useNavigate} from "react-router-dom";
 import MyButton from "./MyButton.js";
+import React from "react";
 
 
 const ReviewItem = ({id, title, date, rating})=> {
@@ -24,4 +25,4 @@ const ReviewItem = ({id, title, date, rating})=> {
     );
 };
 
-export default ReviewItem;
+export default React.memo(ReviewItem);

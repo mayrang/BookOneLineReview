@@ -32,7 +32,7 @@ const Review = () => {
         return (
             <div className="ReviewPage">
                 <MyHeader headText={data.title} leftChild={<MyButton type={"default"} text={"뒤로가기"} onClick={() => navigate(-1)} />}
-                rightChild={<MyButton type={"positive"} text={"수정하기"} onClick={() => navigate(`edit/${id}`)} />} />
+                rightChild={<MyButton type={"positive"} text={"수정하기"} onClick={() => navigate(`/edit/${id}`)} />} />
                 <article>
                     <section>
                         <h4>읽은 날짜 : {new Date(parseInt(data.date)).toISOString().slice(0, 10)}</h4>

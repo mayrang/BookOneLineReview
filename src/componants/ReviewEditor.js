@@ -1,4 +1,4 @@
-import {useCallback, useContext, useState, useRef, useEffect} from "react";
+import React, {useCallback, useContext, useState, useRef, useEffect} from "react";
 import { categoryList } from "../utils/categoryList";
 import { ReviewDispatchContext } from "../App.js";
 import { useNavigate } from "react-router-dom";
@@ -115,4 +115,4 @@ const ReviewEditor = ({originData}) => {
     );
 };
 
-export default ReviewEditor;
+export default React.memo(ReviewEditor);
