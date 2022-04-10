@@ -1,7 +1,7 @@
 import { useCallback, useContext, useEffect, useState} from "react";
 import MyButton from "./componants/MyButton";
 import MyHeader from "./componants/MyHeader";
-import { ReviewStateContext} from "./App.js";
+import {ReviewStateContext} from "./App.js";
 import ReviewList from "./componants/ReviewList.js";
 
 const Home = () => {
